@@ -5,7 +5,7 @@
   <h3 align="center">The project created in Webpuck</h3>
 </p>
 
-__*link to example*__: 
+__*link to example*__: https://dmytrokabluchii.github.io/Food-project/
 
 Single page landing
 
