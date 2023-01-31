@@ -7,6 +7,6 @@
 
 __*link to example*__: https://dmytrokabluchii.github.io/Food-project/
 
-Single page landing
+Single page landing, responsive design.
 
-Technologies used: HTML, CSS , Pure Java Script, JSON, AJAX, Webpuck.
+Technologies used: HTML, CSS, Pure Java Script, JSON, AJAX, Webpuck, Core.js.
