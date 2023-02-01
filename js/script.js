@@ -3,6 +3,9 @@ require('es6-promise').polyfill();
 import "core-js/stable";
 import 'nodelist-foreach-polyfill';
 
+import startPreload from './modules/preload';
+import smoothScroll from './modules/smoothScroll';
+import fixHeader from './modules/fixHeader';
 import burgerMenu from './modules/mobileMenu';
 import tabs from './modules/tabs';
 import timer from './modules/timer';
@@ -15,7 +18,10 @@ import {openModal} from './modules/modal';
 
 
 window.addEventListener('DOMContentLoaded', () => {  
-    const modalTimerId = setTimeout(() => openModal('.modal', modalTimerId), 500000); 
+    startPreload();
+    smoothScroll('.header__link', '.header__logo-link', '.pepper');
+    fixHeader(".header");
+    const modalTimerId = setTimeout(() => openModal('.modal', modalTimerId), 700000); 
     burgerMenu ({
         btn: ".hamburger__menu",
         menu: ".mobile",

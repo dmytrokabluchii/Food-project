@@ -208,6 +208,34 @@ function cards() {
 
 /***/ }),
 
+/***/ "./js/modules/fixHeader.js":
+/*!*********************************!*\
+  !*** ./js/modules/fixHeader.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function fixHeader(el) {
+  const headerClass = document.querySelector(el);
+
+  window.onscroll = function () {
+    functionFixHeader();
+  };
+
+  function functionFixHeader() {
+    if (window.pageYOffset > 0) {
+      headerClass.classList.add("fixed_header");
+    } else {
+      headerClass.classList.remove("fixed_header");
+    }
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (fixHeader);
+
+/***/ }),
+
 /***/ "./js/modules/forms.js":
 /*!*****************************!*\
   !*** ./js/modules/forms.js ***!
@@ -389,6 +417,28 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
 
 /***/ }),
 
+/***/ "./js/modules/preload.js":
+/*!*******************************!*\
+  !*** ./js/modules/preload.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function startPreload() {
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(() => {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (startPreload);
+
+/***/ }),
+
 /***/ "./js/modules/slider.js":
 /*!******************************!*\
   !*** ./js/modules/slider.js ***!
@@ -560,6 +610,33 @@ function slider(_ref) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (slider);
+
+/***/ }),
+
+/***/ "./js/modules/smoothScroll.js":
+/*!************************************!*\
+  !*** ./js/modules/smoothScroll.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function smoothScroll(linkFirst, linkSecond, linkThird) {
+  const anchors = document.querySelectorAll(linkFirst, linkSecond, linkThird);
+
+  for (let i of anchors) {
+    i.addEventListener('click', e => {
+      e.preventDefault();
+      const blockID = i.getAttribute('href');
+      document.querySelector(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (smoothScroll);
 
 /***/ }),
 
@@ -21297,14 +21374,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_stable__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var nodelist_foreach_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nodelist-foreach-polyfill */ "./node_modules/nodelist-foreach-polyfill/index.js");
 /* harmony import */ var nodelist_foreach_polyfill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nodelist_foreach_polyfill__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/mobileMenu */ "./js/modules/mobileMenu.js");
-/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tabs */ "./js/modules/tabs.js");
-/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/timer */ "./js/modules/timer.js");
-/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
-/* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/cards */ "./js/modules/cards.js");
-/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
-/* harmony import */ var _modules_calc__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/calc */ "./js/modules/calc.js");
-/* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/forms */ "./js/modules/forms.js");
+/* harmony import */ var _modules_preload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/preload */ "./js/modules/preload.js");
+/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/smoothScroll */ "./js/modules/smoothScroll.js");
+/* harmony import */ var _modules_fixHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/fixHeader */ "./js/modules/fixHeader.js");
+/* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/mobileMenu */ "./js/modules/mobileMenu.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/tabs */ "./js/modules/tabs.js");
+/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/timer */ "./js/modules/timer.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
+/* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/cards */ "./js/modules/cards.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
+/* harmony import */ var _modules_calc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/calc */ "./js/modules/calc.js");
+/* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/forms */ "./js/modules/forms.js");
 (__webpack_require__(/*! es6-promise */ "./node_modules/es6-promise/dist/es6-promise.js").polyfill)();
 
 
@@ -21318,18 +21398,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
-  const modalTimerId = setTimeout(() => (0,_modules_modal__WEBPACK_IMPORTED_MODULE_5__.openModal)('.modal', modalTimerId), 500000);
-  (0,_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_2__["default"])({
+  (0,_modules_preload__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_3__["default"])('.header__link', '.header__logo-link', '.pepper');
+  (0,_modules_fixHeader__WEBPACK_IMPORTED_MODULE_4__["default"])(".header");
+  const modalTimerId = setTimeout(() => (0,_modules_modal__WEBPACK_IMPORTED_MODULE_8__.openModal)('.modal', modalTimerId), 700000);
+  (0,_modules_mobileMenu__WEBPACK_IMPORTED_MODULE_5__["default"])({
     btn: ".hamburger__menu",
     menu: ".mobile",
     links: ".mobile-menu__link"
   });
-  (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_3__["default"])('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
-  (0,_modules_timer__WEBPACK_IMPORTED_MODULE_4__["default"])('.timer', '2023-11-08');
-  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_5__["default"])('[data-modal]', '.modal', modalTimerId);
-  (0,_modules_cards__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_7__["default"])({
+  (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_6__["default"])('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
+  (0,_modules_timer__WEBPACK_IMPORTED_MODULE_7__["default"])('.timer', '2023-11-08');
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_8__["default"])('[data-modal]', '.modal', modalTimerId);
+  (0,_modules_cards__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_10__["default"])({
     container: '.offer__slider',
     slide: '.offer__slide',
     nextArrow: '.offer__slider-next',
@@ -21339,8 +21425,8 @@ window.addEventListener('DOMContentLoaded', () => {
     wrapper: '.offer__slider-wrapper',
     field: '.offer__slider-inner'
   });
-  (0,_modules_calc__WEBPACK_IMPORTED_MODULE_8__["default"])();
-  (0,_modules_forms__WEBPACK_IMPORTED_MODULE_9__["default"])('form', modalTimerId);
+  (0,_modules_calc__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  (0,_modules_forms__WEBPACK_IMPORTED_MODULE_12__["default"])('form', modalTimerId);
 }); // npm install webpack webpack-cli --save-dev - команда по установке webpack
 // webpack.config.js - это наш конфигурац-й файл
 // Далее выполним: npx webpack

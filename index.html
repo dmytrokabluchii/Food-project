@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="preloader">
+        <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+            <path fill="currentColor" id="preloader-path"
+              d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+            </path>
+        </svg>
+    </div>
+
     <header class="header">
         <div class="header__left-block">
             <div class="header__logo">
-                <img src="icons/logo.svg" alt="Логотип">
+                <a href="#home" class="header__logo-link">
+                    <img src="icons/logo.svg" alt="Логотип">
+                </a>
             </div>
             <nav class="header__links">
-                <a href="#!" class="header__link">Доставка харчування</a>
+                <a href="#calculating-calories" class="header__link">Розрахунок калорій</a>
                 <a href="#menu-cards" class="header__link">Наше меню</a>
             </nav>
             <div class="hamburger__menu">
@@ -42,7 +52,7 @@
         <div class="mobile-menu">
             <div class="mobile-menu__block block-up">
                 <nav class="mobile-menu__links">
-                    <a href="#!" class="mobile-menu__link">Доставка харчування</a>
+                    <a href="#calculating-calories" class="mobile-menu__link">Розрахунок калорій</a>
                     <a href="#menu-cards" class="mobile-menu__link">Наше меню</a>
                 </nav>
             </div>
@@ -82,7 +92,7 @@
         </a>
     </div>
     
-    <div class="preview">
+    <div class="preview" id="home">
         <div class="bgc_blue"></div>
         <div class="container">
             <div class="tabcontainer">
@@ -202,7 +212,7 @@
 
     <div class="divider"></div>
     
-    <div class="calculating">
+    <div class="calculating" id="calculating-calories">
         <div class="container">
             <h2 class="title">Розрахуємо вашу потребу у калоріях?
             </h2>
@@ -336,7 +346,7 @@
                 </a>
             </div>
             <div class="pepper">
-                <a href="#!">
+                <a href="#home" class="pepper-link">
                     <img src="icons/veg.svg" alt="pepper">
                 </a>
             </div>
