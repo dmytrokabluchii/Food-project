@@ -188,23 +188,18 @@ function cards() {
     }
 
   } // Пересоберем наши карточки new MenuCard() 
+  // getResource('http://localhost:3000/menu')
+  // .then(data => {
+  //     data.forEach(({img, altimg, title, descr, price}) => {
+  //         new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+  //     });
+  // });
 
-
-  (0,_services_services__WEBPACK_IMPORTED_MODULE_0__.getResource)('http://localhost:3000/menu').then(data => {
-    data.forEach(_ref => {
-      let {
-        img,
-        altimg,
-        title,
-        descr,
-        price
-      } = _ref;
-      new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-    });
-  });
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (cards);
+/* harmony default export */ __webpack_exports__["default"] = (cards); // https://dmytrokabluchii.github.io/Food-project/db.json
+// http://dimdim.byethost13.com/Food/db.json
+// http://localhost:3000/menu
 
 /***/ }),
 

@@ -42,12 +42,16 @@ function cards() {
         }
     }
     // Пересоберем наши карточки new MenuCard() 
-    getResource('http://localhost:3000/menu')
-    .then(data => {
-        data.forEach(({img, altimg, title, descr, price}) => {
-            new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-        });
-    });
+    // getResource('http://localhost:3000/menu')
+    // .then(data => {
+    //     data.forEach(({img, altimg, title, descr, price}) => {
+    //         new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+    //     });
+    // });
 }
 
 export default cards;
+
+// https://dmytrokabluchii.github.io/Food-project/db.json
+// http://dimdim.byethost13.com/Food/db.json
+// http://localhost:3000/menu

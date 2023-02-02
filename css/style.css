@@ -721,7 +721,8 @@ a {
     padding-left: 95px;
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    gap: 5px;
 }
 .promotion__timer .timer__block {
     width: 102px;
@@ -960,6 +961,9 @@ a {
     }
     .btn-call {
         height: 50px;
+    }
+    .promotion__timer .timer__block span {
+        font-size: 46px;
     }
 }
 
